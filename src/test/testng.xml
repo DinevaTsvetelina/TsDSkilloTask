@@ -1,0 +1,40 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="TsDTestSuite" verbose="1">
+
+    <test name="RegisterUserTests">
+        <classes>
+            <class name="userarea.positive.RegisterUserTests"/>
+            <class name="userarea.negative.RegisterUserTests"/>
+        </classes>
+    </test>
+
+    <test name="LoginTests">
+        <classes>
+            <class name="userarea.positive.LoginUserTests"/>
+            <class name="userarea.negative.LoginUserTests"/>
+        </classes>
+    </test>
+
+    <test name="UpdateProfileInformationTests">
+        <classes>
+            <class name="userarea.positive.UpdateProfileTests"/>
+            <class name="userarea.negative.UpdateProfileTests"/>
+        </classes>
+    </test>
+
+    <test name="CreatePostTests">
+        <classes>
+            <class name="userarea.positive.CreatePostTests"/>
+            <class name="userarea.negative.CreatePostTests"/>
+        </classes>
+    </test>
+
+    <test name="LikeAndDislikePostsTests">
+        <classes>
+            <class name="userarea.positive.LikeAndDislikePostsThroughHomePageTests"/>
+            <class name="userarea.positive.LikeAndDislikePostsThroughProfilePageTests"/>
+        </classes>
+    </test>
+
+</suite>
