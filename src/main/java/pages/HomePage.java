@@ -35,24 +35,26 @@ public class HomePage extends BasePage {
     }
 
     public void likeLatestPost() {
-        this.latestPostLike.click();
+
+        this.actions.moveToElement(this.latestPostLike).click().perform();
         this.wait.until(ExpectedConditions.visibilityOf(this.latestPostAlreadyLiked));
     }
 
     public void dislikeLatestPost() {
-        this.latestPostDislike.click();
+
+        this.actions.moveToElement(this.latestPostDislike).click().perform();
         this.wait.until(ExpectedConditions.visibilityOf(this.latestPostAlreadyDisliked));
     }
 
     public void revertLatestLikePost() {
 
-        this.latestPostAlreadyLiked.click();
+        this.actions.moveToElement(this.latestPostAlreadyLiked).click().perform();
         this.wait.until(ExpectedConditions.visibilityOf(this.latestPostLike));
     }
 
     public void revertLatestDislikePost() {
-
-        this.latestPostAlreadyDisliked.click();
+        
+        this.actions.moveToElement(this.latestPostAlreadyDisliked).click().perform();
         this.wait.until(ExpectedConditions.visibilityOf(this.latestPostDislike));
     }
 

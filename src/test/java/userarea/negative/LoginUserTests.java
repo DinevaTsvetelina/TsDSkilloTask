@@ -41,7 +41,7 @@ public class LoginUserTests extends BaseTest {
     @Test
     public void cannotLoginWithInvalidUsernameInvalidPassword() {
 
-        UserRegistrationData userData = createAndLogoutUser();
+        createAndLogoutUser();
 
         var login = new LoginPage(this.driver);
         login.navigateTo();
@@ -83,7 +83,7 @@ public class LoginUserTests extends BaseTest {
     @Test
     public void cannotLoginWithEmptyUsernameEmptyPassword() {
 
-        UserRegistrationData userData = createAndLogoutUser();
+        createAndLogoutUser();
 
         var login = new LoginPage(this.driver);
         login.navigateTo();
@@ -93,6 +93,7 @@ public class LoginUserTests extends BaseTest {
 
         Assert.assertFalse(header.verifyProfileMenuElementExists(), "User is not signed in as expected");
     }
+    
     private UserRegistrationData createAndLogoutUser() {
         var home = new HomePage(this.driver);
         home.navigateTo();

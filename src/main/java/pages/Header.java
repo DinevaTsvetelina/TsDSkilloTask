@@ -1,13 +1,9 @@
 package pages;
 
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import utils.ComponentBase;
-
-import java.util.List;
 
 public class Header extends ComponentBase {
     @FindBy(id = "nav-link-login")

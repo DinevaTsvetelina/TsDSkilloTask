@@ -9,7 +9,6 @@ import pages.LoginPage;
 import pages.RegisterPage;
 import utils.UserRegistrationData;
 
-
 public class LoginUserTests extends BaseTest {
     @Test
     public void loginUserSuccessfullyWithUsername() {
@@ -89,8 +88,6 @@ public class LoginUserTests extends BaseTest {
         var login = new LoginPage(this.driver);
         login.navigateTo();
         login.signInUserWithUsernameOrEmail(userData.getUsername(), "111", false);
-
-        var header = new Header(this.driver);
 
         String actualInvalidPasswordErrorMessage = login.getErrorToast();
 
