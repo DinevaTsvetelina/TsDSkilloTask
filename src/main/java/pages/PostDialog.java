@@ -30,24 +30,26 @@ public class PostDialog extends ComponentBase {
     }
 
     public void likeLatestPost() {
-        this.postLike.click();
+
+        this.actions.moveToElement(this.postLike).click().perform();
         this.wait.until(ExpectedConditions.visibilityOf(this.postAlreadyLiked));
     }
 
     public void dislikeLatestPost() {
-        this.postDislike.click();
+
+        this.actions.moveToElement(this.postDislike).click().perform();
         this.wait.until(ExpectedConditions.visibilityOf(this.postAlreadyDisliked));
     }
 
     public void revertLatestLikePost() {
 
-        this.postAlreadyLiked.click();
+        this.actions.moveToElement(this.postAlreadyLiked).click().perform();
         this.wait.until(ExpectedConditions.visibilityOf(this.postLike));
     }
 
     public void revertLatestDislikePost() {
 
-        this.postAlreadyDisliked.click();
+        this.actions.moveToElement(this.postAlreadyDisliked).click().perform();
         this.wait.until(ExpectedConditions.visibilityOf(this.postDislike));
     }
 
