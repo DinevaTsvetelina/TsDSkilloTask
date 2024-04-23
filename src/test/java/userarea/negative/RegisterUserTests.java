@@ -38,7 +38,7 @@ public class RegisterUserTests extends BaseTest {
         userDataSecond.setUsername(sameUsername);
         register.addUser(userDataSecond);
 
-        String actualErrorToastText = register.getErrorToastText();
+        String actualErrorToastText = register.getErrorToastMessage();
 
         Assert.assertEquals(actualErrorToastText, "Username taken", "Error message is not as expected.");
     }
@@ -60,7 +60,7 @@ public class RegisterUserTests extends BaseTest {
         userData.setUsername("u");
         register.addUser(userData);
 
-        String actualErrorToastText = register.getErrorToastText();
+        String actualErrorToastText = register.getErrorToastMessage();
 
         Assert.assertEquals(actualErrorToastText, "Registration failed!", "Error message is not as expected.");
     }
@@ -82,7 +82,7 @@ public class RegisterUserTests extends BaseTest {
         userData.setUsername("longerThanMaxUsername");
         register.addUser(userData);
 
-        String actualErrorToastText = register.getErrorToastText();
+        String actualErrorToastText = register.getErrorToastMessage();
 
         Assert.assertEquals(actualErrorToastText, "Registration failed!", "Error message is not as expected.");
     }
@@ -148,7 +148,7 @@ public class RegisterUserTests extends BaseTest {
         Assert.assertEquals(actualShortPasswordErrorMessage, "Minimum 6 characters !", "Error message is not as expected.");
 
         register.clickSignIn();
-        String actualErrorToastText = register.getErrorToastText();
+        String actualErrorToastText = register.getErrorToastMessage();
         Assert.assertEquals(actualErrorToastText, "Registration failed!", "Error message is not as expected.");
     }
 
@@ -174,7 +174,7 @@ public class RegisterUserTests extends BaseTest {
         Assert.assertEquals(actualShortPasswordErrorMessage, "Maximum 20 characters!", "Error message is not as expected.");
 
         register.clickSignIn();
-        String actualErrorToastText = register.getErrorToastText();
+        String actualErrorToastText = register.getErrorToastMessage();
         Assert.assertEquals(actualErrorToastText, "Registration failed!", "Error message is not as expected.");
     }
 

@@ -35,7 +35,7 @@ public class UpdateProfileTests extends BaseTest {
 
         Assert.assertTrue(profile.isToastMessageDisplayed());
 
-        String actualToastMessage = profile.getToastMessage();
+        String actualToastMessage = profile.getToast();
 
         Assert.assertEquals(actualToastMessage, "Profile updated", "Toast message is not as expected.");
     }
@@ -51,7 +51,7 @@ public class UpdateProfileTests extends BaseTest {
         userProfileData.setEmail("updatedEmail@test.com");
         modifyProfileDialog.editProfileInfo(userProfileData);
 
-        String actualToastMessage = profile.getToastMessage();
+        String actualToastMessage = profile.getToast();
 
         Assert.assertEquals(actualToastMessage, "Profile updated", "Toast message is not as expected.");
     }
@@ -68,7 +68,7 @@ public class UpdateProfileTests extends BaseTest {
         userProfileData.setConfirmPassword("updatedPassword");
         modifyProfileDialog.editProfileInfo(userProfileData);
 
-        String actualToastMessage = profile.getToastMessage();
+        String actualToastMessage = profile.getToast();
 
         Assert.assertEquals(actualToastMessage, "Profile updated", "Toast message is not as expected.");
     }
@@ -84,7 +84,7 @@ public class UpdateProfileTests extends BaseTest {
         userProfileData.setPublicInfo("updatedPublicInfo");
         modifyProfileDialog.editProfileInfo(userProfileData);
 
-        String actualToastMessage = profile.getToastMessage();
+        String actualToastMessage = profile.getToast();
 
         Assert.assertEquals(actualToastMessage, "Profile updated", "Toast message is not as expected.");
     }

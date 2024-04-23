@@ -44,8 +44,4 @@ public class CreatePostPage extends BasePage {
     public boolean hasAttachedImage() {
         return isElementPresented(this.imagePreview);
     }
-
-    public String getPostToastMessage() {
-        return this.toastMessage.getText();
-    }
 }

@@ -75,7 +75,7 @@ public class LoginUserTests extends BaseTest {
         login.navigateTo();
         login.signInUserWithUsernameOrEmail("anotherUsername", userData.getPassword(), false);
 
-        String actualUserNotFoundErrorMessage = login.getErrorToast();
+        String actualUserNotFoundErrorMessage = login.getErrorToastMessage();
 
         Assert.assertEquals(actualUserNotFoundErrorMessage, "User not found", "Error message is not as expected.");
     }
@@ -89,7 +89,7 @@ public class LoginUserTests extends BaseTest {
         login.navigateTo();
         login.signInUserWithUsernameOrEmail(userData.getUsername(), "111", false);
 
-        String actualInvalidPasswordErrorMessage = login.getErrorToast();
+        String actualInvalidPasswordErrorMessage = login.getErrorToastMessage();
 
         Assert.assertEquals(actualInvalidPasswordErrorMessage, "Invalid password", "Error message is not as expected.");
     }

@@ -15,7 +15,7 @@ public class LikeAndDislikePostsThroughHomePageTests extends BaseTest {
         register.navigateTo();
         UserRegistrationData userData = createMockedData();
         register.addUser(userData);
-        register.waitUntilErrorToastIsInvisible();
+        register.waitUntilToastInvisible();
 
         var header = new Header(this.driver);
         header.clickNewPost();

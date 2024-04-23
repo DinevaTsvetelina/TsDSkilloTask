@@ -25,9 +25,6 @@ public class RegisterPage extends BasePage {
     @FindBy(xpath = "//div/button[contains(@id, 'sign-in-button')]")
     private WebElement signInButton;
 
-    @FindBy(xpath = "//div[@class='toast-error ngx-toastr ng-trigger ng-trigger-flyInOut']")
-    private WebElement errorToast;
-
     @FindBy(xpath = "//span[@class='invalid-feedback']")
     private WebElement usernameErrorMessage;
 
@@ -56,11 +53,6 @@ public class RegisterPage extends BasePage {
         this.confirmPasswordInput.sendKeys(userData.getConfirmPassword());
     }
 
-    public String getErrorToastText() {
-
-        return this.errorToast.getText();
-    }
-
     public String getEmailErrorMessage() {
         return this.emailErrorMessage.getText();
     }
@@ -75,18 +67,6 @@ public class RegisterPage extends BasePage {
 
     public String getDoNotMatchPasswordsErrorMessage() {
         return this.doNotMatchPasswordsErrorMessage.getText();
-    }
-
-    public boolean isErrorToastDisplayed() {
-        return this.isElementPresented(this.errorToast);
-    }
-
-    public void waitUntilErrorToastIsInvisible() {
-        wait.until(ExpectedConditions.invisibilityOf(this.errorToast));
-    }
-
-    public void waitUntilToastInvisible() {
-        this.wait.until(ExpectedConditions.invisibilityOf(this.toastMessage));
     }
 
     public String getUsernameErrorMessage() {

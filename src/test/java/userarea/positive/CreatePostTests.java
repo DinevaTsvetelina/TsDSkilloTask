@@ -16,7 +16,7 @@ public class CreatePostTests extends BaseTest {
         register.navigateTo();
         UserRegistrationData userData = createMockedData();
         register.addUser(userData);
-        register.waitUntilErrorToastIsInvisible();
+        register.waitUntilToastInvisible();
     }
 
     @Test
@@ -181,7 +181,7 @@ public class CreatePostTests extends BaseTest {
 
         createPost.submitPost(false);
 
-        String actualToastMessage = createPost.getPostToastMessage();
+        String actualToastMessage = createPost.getToast();
 
         Assert.assertEquals(actualToastMessage, "Post created!", "Toast message is not as expected.");
     }
@@ -200,7 +200,7 @@ public class CreatePostTests extends BaseTest {
 
         createPost.submitPost(true);
 
-        String actualToastMessage = createPost.getPostToastMessage();
+        String actualToastMessage = createPost.getToast();
 
         Assert.assertEquals(actualToastMessage, "Post created!", "Toast message is not as expected.");
     }
@@ -214,7 +214,7 @@ public class CreatePostTests extends BaseTest {
         var createPost = new CreatePostPage(this.driver);
         createPost.submitPost(false);
 
-        String actualToastMessage = createPost.getPostToastMessage();
+        String actualToastMessage = createPost.getErrorToastMessage();
 
         Assert.assertEquals(actualToastMessage, "Creation of post failed!", "Toast message is not as expected.");
     }
@@ -228,7 +228,7 @@ public class CreatePostTests extends BaseTest {
         var createPost = new CreatePostPage(this.driver);
         createPost.submitPost(true);
 
-        String actualToastMessage = createPost.getPostToastMessage();
+        String actualToastMessage = createPost.getErrorToastMessage();
 
         Assert.assertEquals(actualToastMessage, "Creation of post failed!", "Toast message is not as expected.");
     }

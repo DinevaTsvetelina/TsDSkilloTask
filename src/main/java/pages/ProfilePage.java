@@ -73,12 +73,4 @@ public class ProfilePage extends BasePage {
     public void goToModifyProfileDialog() {
         this.editProfileButton.click();
     }
-
-    public String getToastMessage() {
-        return this.toastMessage.getText();
-    }
-
-    public boolean isToastMessageDisplayed() {
-        return isElementPresented(this.toastMessage);
-    }
 }

@@ -47,8 +47,4 @@ public class LoginPage extends BasePage {
     public String getPasswordText() {
         return this.passwordInput.getAttribute("value");
     }
-
-    public String getErrorToast() {
-        return this.toastMessage.getText();
-    }
 }
