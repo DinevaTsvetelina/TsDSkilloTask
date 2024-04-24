@@ -39,7 +39,7 @@ public class LoginUserTests extends BaseTest {
     }
 
     @Test
-    public void loginUserSuccessfullyWithUsernameAndRememberMeOptionSelected() {
+    public void verifyUsernameAndPasswordAreRememberedCorrectlyWhenRememberMeOptionSelected() {
 
         UserRegistrationData userData = createAndLogoutUser();
 
@@ -53,7 +53,7 @@ public class LoginUserTests extends BaseTest {
     }
 
     @Test
-    public void loginUserSuccessfullyWithEmailAndRememberMeOptionSelected() {
+    public void verifyEmailAndPasswordAreRememberedCorrectlyWhenRememberMeOptionSelected() {
 
         UserRegistrationData userData = createAndLogoutUser();
 
@@ -64,6 +64,34 @@ public class LoginUserTests extends BaseTest {
         header.logoutUser();
         Assert.assertEquals(login.getUsernameOrEmailText(), userData.getEmail(), "Email is not remembered correctly.");
         Assert.assertEquals(login.getPasswordText(), userData.getPassword(), "Password is not remembered correctly.");
+    }
+
+    @Test
+    public void loginUserSuccessfullyWithUsernameAndRememberMeOptionSelected() {
+
+        UserRegistrationData userData = createAndLogoutUser();
+
+        var login = new LoginPage(this.driver);
+
+        login.signInUserWithUsernameOrEmail(userData.getUsername(), userData.getPassword(), true);
+        var header = new Header(this.driver);
+        header.logoutUser();
+        login.clickSignIn();
+        Assert.assertTrue(header.verifyProfileMenuElementExists(), "User is not signed in as expected");
+    }
+
+    @Test
+    public void loginUserSuccessfullyWithEmailAndRememberMeOptionSelected() {
+
+        UserRegistrationData userData = createAndLogoutUser();
+
+        var login = new LoginPage(this.driver);
+
+        login.signInUserWithUsernameOrEmail(userData.getEmail(), userData.getPassword(), true);
+        var header = new Header(this.driver);
+        header.logoutUser();
+        login.clickSignIn();
+        Assert.assertTrue(header.verifyProfileMenuElementExists(), "User is not signed in as expected");
     }
 
     @Test

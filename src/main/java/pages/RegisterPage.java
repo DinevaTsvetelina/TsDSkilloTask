@@ -61,15 +61,15 @@ public class RegisterPage extends BasePage {
         return this.minMaxPasswordErrorMessage.getText();
     }
 
-    public void clickSignIn() {
-        this.signInButton.click();
-    }
-
     public String getDoNotMatchPasswordsErrorMessage() {
         return this.doNotMatchPasswordsErrorMessage.getText();
     }
 
     public String getUsernameErrorMessage() {
         return this.usernameErrorMessage.getText();
+    }
+
+    public void clickSignIn() {
+        this.signInButton.click();
     }
 }

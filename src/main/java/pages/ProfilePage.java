@@ -30,7 +30,7 @@ public class ProfilePage extends BasePage {
     @FindBy(xpath="//app-profile")
     private WebElement profilePage;
 
-    @FindBy(xpath="//div[@class='post-img'][1]")
+    @FindBy(xpath="(//div[@class='post-img'])[1]")
     private WebElement firstPost;
 
     @FindBy(xpath="//i[@class='fas fa-user-edit ng-star-inserted']")

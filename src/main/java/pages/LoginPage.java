@@ -37,7 +37,7 @@ public class LoginPage extends BasePage {
         if (isRememberMeEnabled) {
             this.rememberMeCheckbox.click();
         }
-        this.signInButton.click();
+        clickSignIn();
     }
 
     public String getUsernameOrEmailText() {
@@ -47,4 +47,10 @@ public class LoginPage extends BasePage {
     public String getPasswordText() {
         return this.passwordInput.getAttribute("value");
     }
+
+    public void clickSignIn() {
+        this.signInButton.click();
+    }
+
+
 }
