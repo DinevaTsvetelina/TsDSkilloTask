@@ -232,6 +232,7 @@ public class CreatePostTests extends BaseTest {
 
         Assert.assertEquals(actualToastMessage, "Creation of post failed!", "Toast message is not as expected.");
     }
+
     @Test
     public void verifyAllPostsCountIsCorrect() {
 

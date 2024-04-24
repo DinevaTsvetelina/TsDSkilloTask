@@ -15,10 +15,10 @@ public class Header extends ComponentBase {
     @FindBy(xpath = "//i[@class='fas fa-sign-out-alt fa-lg']/parent::a")
     private WebElement logoutButton;
 
-    @FindBy (id = "nav-link-new-post")
+    @FindBy(id = "nav-link-new-post")
     private WebElement newPostLink;
 
-    @FindBy (id = "nav-link-home")
+    @FindBy(id = "nav-link-home")
     private WebElement homeLink;
 
     public Header(WebDriver driver) {

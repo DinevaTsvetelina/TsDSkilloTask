@@ -34,17 +34,16 @@ public class BaseTest {
         ChromeBrowser.quit();
     }
 
-    protected UserRegistrationData createMockedData(){
+    protected UserRegistrationData createMockedData() {
         var password = this.faker.bothify("?##????");
         return new UserRegistrationData(this.faker.name().username(), this.faker.bothify("????##@my-mail.com"), password, password);
     }
 
-    protected File getFileFromResource(String path){
-        try{
+    protected File getFileFromResource(String path) {
+        try {
             URL fileUrl = ClassLoader.getSystemResource(path);
             return new File(fileUrl.toURI());
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             throw new RuntimeException();
         }
     }

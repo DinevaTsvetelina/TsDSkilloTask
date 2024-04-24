@@ -13,7 +13,7 @@ public class Screenshot {
     public static void capture(WebDriver driver, String path, String fileName) {
         try {
             new File(path).mkdirs();
-            try ( FileOutputStream out = new FileOutputStream(path + File.separator + "screenshot-" + fileName + ".png")) {
+            try (FileOutputStream out = new FileOutputStream(path + File.separator + "screenshot-" + fileName + ".png")) {
                 out.write(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES));
             }
         } catch (IOException | WebDriverException e) {

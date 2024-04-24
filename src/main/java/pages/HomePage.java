@@ -53,7 +53,7 @@ public class HomePage extends BasePage {
     }
 
     public void revertLatestDislikePost() {
-        
+
         this.actions.moveToElement(this.latestPostAlreadyDisliked).click().perform();
         this.wait.until(ExpectedConditions.visibilityOf(this.latestPostDislike));
     }
@@ -62,11 +62,12 @@ public class HomePage extends BasePage {
 
         if (this.latestPostLikeAndDislikeTexts.size() != 2) {
             throw new InvalidElementStateException("Error, post info should have exactly two elements.");
+        } else {
+            String[] result = new String[2];
+            result[0] = this.latestPostLikeAndDislikeTexts.get(0).getText();
+            result[1] = this.latestPostLikeAndDislikeTexts.get(1).getText();
+            return result;
         }
-        String[] result = new String[2];
-        result[0] = this.latestPostLikeAndDislikeTexts.get(0).getText();
-        result[1] = this.latestPostLikeAndDislikeTexts.get(1).getText();
-        return result;
     }
 
     public void clickLatestPost() {

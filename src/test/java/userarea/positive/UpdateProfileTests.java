@@ -194,8 +194,8 @@ public class UpdateProfileTests extends BaseTest {
         var modifyProfileDialog = new ModifyProfileDialog(this.driver);
         var userProfileData = new UserProfileData();
         userProfileData.setPublicInfo("longerThanMaximumAllowedSizePublicInfoLongerThanMaximumAllowedSize" +
-            "PublicInfoLongerThanMaximumAllowedSizePublicInfoLongerThanMaximumAllowedSizePublicInfoLonger" +
-            "ThanMaximumAllowedSizePublicInfoLongerThanM");
+                "PublicInfoLongerThanMaximumAllowedSizePublicInfoLongerThanMaximumAllowedSizePublicInfoLonger" +
+                "ThanMaximumAllowedSizePublicInfoLongerThanM");
         modifyProfileDialog.editProfileInfo(userProfileData);
 
         Assert.assertTrue(modifyProfileDialog.isSaveButtonDisabled(), "Save button is enabled.");

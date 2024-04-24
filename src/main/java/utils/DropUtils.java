@@ -11,12 +11,12 @@ import java.io.File;
 import java.time.Duration;
 
 public class DropUtils {
-    public static void dropFile(WebDriver driver, File filePath, WebElement target, int offsetX, int offsetY) {
-        if(!filePath.exists()){
-            throw new WebDriverException("File not found: " + filePath);
+    public static void dropFile(WebDriver driver, File file, WebElement target, int offsetX, int offsetY) {
+        if (!file.exists()) {
+            throw new WebDriverException("File not found: " + file);
         }
 
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
         String JS_DROP_FILE =
@@ -47,8 +47,8 @@ public class DropUtils {
                         "document.body.appendChild(input);" +
                         "return input;";
 
-        WebElement input =  (WebElement)jse.executeScript(JS_DROP_FILE, target, offsetX, offsetY);
-        input.sendKeys(filePath.getAbsoluteFile().toString());
+        WebElement input = (WebElement) jse.executeScript(JS_DROP_FILE, target, offsetX, offsetY);
+        input.sendKeys(file.getAbsoluteFile().toString());
         wait.until(ExpectedConditions.stalenessOf(input));
     }
 }

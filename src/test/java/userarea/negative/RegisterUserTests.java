@@ -142,6 +142,7 @@ public class RegisterUserTests extends BaseTest {
 
         UserRegistrationData userData = createMockedData();
         userData.setPassword("123");
+        userData.setConfirmPassword("123");
         register.addUserInformation(userData);
 
         String actualShortPasswordErrorMessage = register.getMinMaxPasswordErrorMessage();

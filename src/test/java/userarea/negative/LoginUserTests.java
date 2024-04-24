@@ -93,7 +93,7 @@ public class LoginUserTests extends BaseTest {
 
         Assert.assertFalse(header.verifyProfileMenuElementExists(), "User is not signed in as expected");
     }
-    
+
     private UserRegistrationData createAndLogoutUser() {
         var home = new HomePage(this.driver);
         home.navigateTo();

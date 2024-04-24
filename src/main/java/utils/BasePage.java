@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public abstract class BasePage extends ComponentBase{
+public abstract class BasePage extends ComponentBase {
     protected final String url;
 
-    @FindBy(xpath ="//div[@class='toast-message ng-star-inserted']")
+    @FindBy(xpath = "//div[@class='toast-message ng-star-inserted']")
     private WebElement toast;
 
     @FindBy(xpath = "//div[@class='toast-error ngx-toastr ng-trigger ng-trigger-flyInOut']")
@@ -19,7 +19,7 @@ public abstract class BasePage extends ComponentBase{
         this.url = url;
     }
 
-    public void navigateTo(){
+    public void navigateTo() {
         this.driver.get(this.url);
     }
 

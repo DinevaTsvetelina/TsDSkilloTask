@@ -27,13 +27,13 @@ public class ProfilePage extends BasePage {
     @FindBy(xpath = "//div[@class='post-img']/img")
     private List<WebElement> posts;
 
-    @FindBy(xpath="//app-profile")
+    @FindBy(xpath = "//app-profile")
     private WebElement profilePage;
 
-    @FindBy(xpath="(//div[@class='post-img'])[1]")
+    @FindBy(xpath = "(//div[@class='post-img'])[1]")
     private WebElement firstPost;
 
-    @FindBy(xpath="//i[@class='fas fa-user-edit ng-star-inserted']")
+    @FindBy(xpath = "//i[@class='fas fa-user-edit ng-star-inserted']")
     private WebElement editProfileButton;
 
     public ProfilePage(WebDriver driver) {
@@ -60,13 +60,11 @@ public class ProfilePage extends BasePage {
         return this.posts.size();
     }
 
-    public void waitUntilPageLoaded(){
-        this.wait.withTimeout(Duration.ofSeconds(10));
-        this.wait.pollingEvery(Duration.ofMillis(500));
+    public void waitUntilPageLoaded() {
         this.wait.until(ExpectedConditions.visibilityOf(this.profilePage));
     }
 
-    public void goToFirstPost(){
+    public void goToFirstPost() {
         this.firstPost.click();
     }
 

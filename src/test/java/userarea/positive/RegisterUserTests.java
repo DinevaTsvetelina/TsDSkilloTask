@@ -165,7 +165,7 @@ public class RegisterUserTests extends BaseTest {
         login.clickRegister();
 
         var register = new RegisterPage(this.driver);
-        var userData = this.createMockedData();
+        UserRegistrationData userData = this.createMockedData();
         userData.setConfirmPassword("something_else");
         register.addUserInformation(userData);
 

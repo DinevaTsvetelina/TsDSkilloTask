@@ -6,7 +6,8 @@ public class UserRegistrationData {
     private String password;
     private String confirmPassword;
 
-    public UserRegistrationData() { }
+    public UserRegistrationData() {
+    }
 
     public UserRegistrationData(String username, String email, String password, String confirmPassword) {
         this.username = username;
