@@ -45,16 +45,35 @@ Before you begin, ensure you have the following installed:
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/DinevaTsvetelina/TsDSkilloTask.git
+   ```
 
 2. **Navigate to the Project Directory:**
    ```bash
    cd TsDSkilloTask
+   ```
 
-3. **Run the Tests** - to clean the target folder and run the tests:
+3. **Run the Tests**:
+- to clean the target folder and run the tests:
    ```bash
    mvn clean test
+   ```
 
-4. **Go and check the folder with screenshots of failed tests:**
+- to clean the target folder, run the tests, and generate a report:
+   ```bash
+   mvn clean test site
+   ```
+
+4. **Go and check the folder with surefire reports:**
+   ```bash
+   cd target\surefire-reports
+   ```
+
+5. **If Site lifecycle was executed, go and check the folder with the project's site documentation:**
+   ```bash
+   cd target\site
+   ```
+
+6. **Go and check the folder with screenshots of failed tests:**
    ```bash
    cd target\failed-tests-screenshots
    ```
